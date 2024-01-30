@@ -3,6 +3,7 @@ package com.example.di_tarea_mvvm_carlosmilena.vistas
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -83,12 +84,10 @@ fun ContenidoDetalles(navController: NavController, pokemon: Pokemon) {
 @Composable
 fun PokemonCard(pokemon: Pokemon) {
 
-    Card(
+    Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
-        shape = RoundedCornerShape(16.dp)
+            .padding(16.dp).background(Color.White)
     ) {
         Column(
             modifier = Modifier
@@ -107,14 +106,12 @@ fun PokemonCard(pokemon: Pokemon) {
                 ) {
                     Text(
                         text = pokemon.name.english,
-                        style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 5.dp)
                     )
 
                     Text(
                         text = "N.º " + pokemon.id.toString().padStart(4, '0'),
-                        style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 5.dp)
                     )
@@ -131,7 +128,7 @@ fun PokemonCard(pokemon: Pokemon) {
                 contentScale = ContentScale.Fit
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             Card(
                 shape = RoundedCornerShape(16.dp),
@@ -148,22 +145,18 @@ fun PokemonCard(pokemon: Pokemon) {
                 )
                 Text(
                     text = "English: ${pokemon.name.english}",
-                    style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
                     text = "Japanese: ${pokemon.name.japanese}",
-                    style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
                     text = "Chinese: ${pokemon.name.chinese}",
-                    style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
                     text = "French: ${pokemon.name.french}",
-                    style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
 
