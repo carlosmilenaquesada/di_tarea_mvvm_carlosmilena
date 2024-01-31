@@ -8,6 +8,7 @@ color teal_200
 color teal_700
 color white
 drawable background_inicio
+drawable container_bg
 drawable fondonav
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -29,6 +30,7 @@ drawable playstation_minecraftlegends
 drawable playstation_nba2k23
 drawable playstation_pga2k23
 drawable playstation_stray
+drawable pokemon_logo
 drawable registro__background
 drawable wellplayedlogo
 drawable xbox_ageofempire2
@@ -40,6 +42,9 @@ drawable xbox_jurassicworldevo2
 drawable xbox_nba2k23
 drawable xbox_residentevil4
 drawable xbox_ridersrepublic
+font flexo_medium
+font flexo_medium_italic
+font flexo_medium_normal
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

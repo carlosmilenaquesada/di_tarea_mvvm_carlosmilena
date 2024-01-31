@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -63,7 +62,6 @@ fun PokemonItem(pokemon: Pokemon, navController: NavController) {
             )
             Text(
                 text = "N.º" + pokemon.id.toString().padStart(4, '0'),
-                style = MaterialTheme.typography.bodyMedium,
                 color = Color(0XFF919191),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -75,7 +73,6 @@ fun PokemonItem(pokemon: Pokemon, navController: NavController) {
 
             Text(
                 text = pokemon.name.english,
-                style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 10.dp)
@@ -88,7 +85,6 @@ fun PokemonItem(pokemon: Pokemon, navController: NavController) {
 
                     Text(
                         text = pokemon.type[0],
-                        style = MaterialTheme.typography.bodyMedium,
                         color = getColores()[pokemon.type[0]]?.get(1) ?: Color.Black,
                         textAlign = TextAlign.Center, modifier = Modifier
                             .background(
@@ -105,7 +101,6 @@ fun PokemonItem(pokemon: Pokemon, navController: NavController) {
                     if (pokemon.type.size > 1) {
                         Text(
                             text = pokemon.type[1],
-                            style = MaterialTheme.typography.bodyMedium,
                             color = getColores()[pokemon.type[1]]?.get(1) ?: Color.Black,
                             textAlign = TextAlign.Center, modifier = Modifier
                                 .background(

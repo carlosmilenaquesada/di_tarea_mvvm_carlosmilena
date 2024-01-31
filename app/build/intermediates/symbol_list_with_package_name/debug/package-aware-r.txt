@@ -77,6 +77,7 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable abc_vector_test
 drawable background_inicio
+drawable container_bg
 drawable fondonav
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -117,6 +118,7 @@ drawable playstation_minecraftlegends
 drawable playstation_nba2k23
 drawable playstation_pga2k23
 drawable playstation_stray
+drawable pokemon_logo
 drawable registro__background
 drawable wellplayedlogo
 drawable xbox_ageofempire2
@@ -128,6 +130,9 @@ drawable xbox_jurassicworldevo2
 drawable xbox_nba2k23
 drawable xbox_residentevil4
 drawable xbox_ridersrepublic
+font flexo_medium
+font flexo_medium_italic
+font flexo_medium_normal
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1

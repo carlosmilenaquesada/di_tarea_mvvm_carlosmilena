@@ -14,7 +14,6 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.di_tarea_mvvm_carlosmilena.R
@@ -51,15 +49,8 @@ fun ContenidoInicio(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.wellplayedlogo),
+                painter = painterResource(id = R.drawable.pokemon_logo),
                 contentDescription = "logo"
-            )
-            Spacer(modifier = Modifier.padding(vertical = 20.dp))
-            Text(
-                text = "Tienda de Videojuegos",
-                fontWeight = FontWeight.Bold,
-                style = MaterialTheme.typography.titleLarge,
-                modifier = Modifier.padding(bottom = 16.dp)
             )
             Spacer(modifier = Modifier.padding(vertical = 20.dp))
             Button(
@@ -70,12 +61,11 @@ fun ContenidoInicio(navController: NavController) {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Icon(
-                        imageVector = Icons.Default.List,
-                        contentDescription = null,
+                        imageVector = ),
                         tint = Color.White
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Ver catálogo", color = Color.White)
+                    Text(text = "Pokédex", color = Color.White)
                 }
             }
             Spacer(modifier = Modifier.padding(vertical = 20.dp))

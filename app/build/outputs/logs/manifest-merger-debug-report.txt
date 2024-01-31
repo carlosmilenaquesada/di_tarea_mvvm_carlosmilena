@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\43478f65128f6e81b2f5207d3572de91\transformed\coil-compose-2.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [io.coil-kt:coil-compose-base:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\685c372e7c640b7c291e5f63b1b50c50\transformed\coil-compose-base-2.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [io.coil-kt:coil:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\3c325c6d53c5dbca707ad8719b92ba38\transformed\coil-2.5.0\AndroidManifest.xml:2:1-7:12
@@ -67,26 +67,26 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrador\.gra
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Administrador\.gradle\caches\transforms-3\3b5783fb3316066eb173d7b3117dcd92\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Administrador\.gradle\caches\transforms-3\a7823ff945b283723fb90565df33aa20\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
 	package
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:4:5-67
 	android:name
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:5:5-76
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:5:5-76
 	android:name
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:5:22-73
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:5:22-73
 application
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:7:5-28:19
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:7:5-28:19
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:7:5-28:19
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:7:5-28:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.0] C:\Users\Administrador\.gradle\caches\transforms-3\2561649568200abfe54e385205f06737\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.0] C:\Users\Administrador\.gradle\caches\transforms-3\2561649568200abfe54e385205f06737\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Administrador\.gradle\caches\transforms-3\d549dc22bae2ca7a54f27ef53cb00649\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
@@ -104,51 +104,51 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Administ
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrador\.gradle\caches\transforms-3\8a2b479ce30b6b6bd7226d107ea57c8f\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrador\.gradle\caches\transforms-3\8a2b479ce30b6b6bd7226d107ea57c8f\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\Administrador\.gradle\caches\transforms-3\e060ddb424a06ecfb8e75da3d70f4c48\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:12:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:13:9-54
 	tools:targetApi
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:16:9-29
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:15:9-69
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:15:9-69
 	android:dataExtractionRules
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:9:9-65
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:9:9-65
 activity#com.example.di_tarea_mvvm_carlosmilena.vistas.MainActivity
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:17:9-27:20
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:17:9-27:20
 	android:label
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:20:13-45
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:20:13-45
 	android:exported
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:19:13-36
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:19:13-36
 	android:theme
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:21:13-73
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:21:13-73
 	android:name
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:18:13-48
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:18:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml:25:27-74
 uses-sdk
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\43478f65128f6e81b2f5207d3572de91\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\43478f65128f6e81b2f5207d3572de91\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
 MERGED from [io.coil-kt:coil-compose-base:2.5.0] C:\Users\Administrador\.gradle\caches\transforms-3\685c372e7c640b7c291e5f63b1b50c50\transformed\coil-compose-base-2.5.0\AndroidManifest.xml:5:5-44
@@ -274,9 +274,9 @@ MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Administrador\.gradle\cach
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Administrador\.gradle\caches\transforms-3\a7823ff945b283723fb90565df33aa20\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Administrador\.gradle\caches\transforms-3\a7823ff945b283723fb90565df33aa20\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Administrador\Desktop\28-01-2024_04-47HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrador\Desktop\HACIENDO\di_tarea_mvvm_carlosmilena\app\src\main\AndroidManifest.xml
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling-android:1.6.0] C:\Users\Administrador\.gradle\caches\transforms-3\2561649568200abfe54e385205f06737\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
 	android:exported
