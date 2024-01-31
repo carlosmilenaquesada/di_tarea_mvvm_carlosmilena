@@ -1,8 +1,6 @@
 package com.example.di_tarea_mvvm_carlosmilena.vistas
 
 import android.annotation.SuppressLint
-
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -22,11 +20,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.di_tarea_mvvm_carlosmilena.R
 import com.example.di_tarea_mvvm_carlosmilena.controladores.AppScreens
 import com.example.di_tarea_mvvm_carlosmilena.model.Pokemon
 import com.example.di_tarea_mvvm_carlosmilena.view.PokemonItem
@@ -56,13 +51,6 @@ fun CatalogoScreen(navController: NavController, pokemonViewModel: PokemonViewMo
             modifier = Modifier.padding(contentPadding)
         ) {
 
-            Image(
-                painter = painterResource(id = R.drawable.background_inicio),
-                contentDescription = "background",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.matchParentSize()
-            )
-
             ContenidoCatalogo(
                 pokemonList = pokemonViewModel.pokemonListResponse,
                 pokemonViewModel.getErrorCon(),
@@ -82,7 +70,7 @@ fun ContenidoCatalogo(pokemonList: List<Pokemon>, error: Boolean, navController:
             fontSize = 30.sp
         )
     }
-    else LazyVerticalGrid(columns = GridCells.Fixed(3), content = {
+    else LazyVerticalGrid(modifier = Modifier, columns = GridCells.Fixed(2), content = {
         itemsIndexed(items = pokemonList) { index, item ->
             PokemonItem(pokemon = item, navController)
         }

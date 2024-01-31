@@ -12,13 +12,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -87,220 +86,325 @@ fun PokemonCard(pokemon: Pokemon) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp).background(Color.White)
+            .padding(16.dp)
+            .background(Color.White)
     ) {
         Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(16.dp)
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Row(
-                    horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(
-                        text = pokemon.name.english,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(horizontal = 5.dp)
-                    )
+                Text(
+                    text = pokemon.name.english,
+                    modifier = Modifier.padding(horizontal = 5.dp)
+                )
 
-                    Text(
-                        text = "N.º " + pokemon.id.toString().padStart(4, '0'),
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(horizontal = 5.dp)
-                    )
-                }
-
+                Text(
+                    text = "N.º " + pokemon.id.toString().padStart(4, '0'),
+                    color = Color(0XFF616161),
+                    modifier = Modifier.padding(horizontal = 5.dp)
+                )
             }
+            Spacer(modifier = Modifier.height(8.dp))
             AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current).data(pokemon.image.hires)
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(pokemon.image.hires)
                     .build(),
-                contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .clip(shape = RoundedCornerShape(16.dp)),
-                contentScale = ContentScale.Fit
+                    .width(200.dp)
+                    .height(200.dp)
+                    .background(Color(0XFFF2F2F2))
+                    .padding(5.dp),
+                contentDescription = pokemon.name.english, contentScale = ContentScale.Fit
             )
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Card(
-                shape = RoundedCornerShape(16.dp),
+            /*
+             Card(
+                 shape = RoundedCornerShape(4.dp),
+                 modifier = Modifier
+                     .padding(16.dp)
+             ) {
+                 Text(
+                     text = "Name (Other countries)",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+                 Text(
+                     text = "English: ${pokemon.name.english}",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+                 Text(
+                     text = "Japanese: ${pokemon.name.japanese}",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+                 Text(
+                     text = "Chinese: ${pokemon.name.chinese}",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+                 Text(
+                     text = "French: ${pokemon.name.french}",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+
+             }
+
+
+             Spacer(modifier = Modifier.height(8.dp))
+
+
+             Card(
+                 shape = RoundedCornerShape(4.dp),
+                 modifier = Modifier
+                     .padding(16.dp)
+             ) {
+                 Text(
+                     text = "Type",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(5.dp)
+                 )
+
+                 Text(
+                     text = "Type: ${pokemon.type.joinToString()}",
+                     style = MaterialTheme.typography.bodyLarge
+                 )
+
+             }
+
+
+             Spacer(modifier = Modifier.height(8.dp))
+
+
+
+             Card(
+                 shape = RoundedCornerShape(4.dp),
+                 modifier = Modifier
+                     .padding(16.dp)
+             ) {
+                 Column {
+                     Text(
+                         text = "Base Stats",
+                         textAlign = TextAlign.Center,
+                         modifier = Modifier
+                             .padding(5.dp)
+                             .fillMaxWidth()
+                     )
+                     Text(text = "HP: ${pokemon.base.HP}")
+                     Text(text = "Attack: ${pokemon.base.Attack}")
+                     Text(text = "Defense: ${pokemon.base.Defense}")
+                     Text(text = "Sp. Attack: ${pokemon.base.SpAttack}")
+                     Text(text = "Sp. Defense: ${pokemon.base.SpDefense}")
+                     Text(text = "Speed: ${pokemon.base.Speed}")
+                 }
+
+             }
+
+
+             Spacer(modifier = Modifier.height(8.dp))
+
+ Card(
+                 shape = RoundedCornerShape(4.dp),
+                 modifier = Modifier
+                     .padding(16.dp)
+             ) {
+                 Text(
+                     text = "Description",
+                     textAlign = TextAlign.Center,
+                     modifier = Modifier
+                         .padding(5.dp)
+                         .fillMaxWidth()
+                 )
+                 Text(
+                     text = pokemon.description,
+                     style = MaterialTheme.typography.bodyMedium
+                 )
+             }*/
+
+            ElevatedCard(
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 6.dp
+                ),
+                shape = RoundedCornerShape(4.dp),
                 modifier = Modifier
-                    .padding(16.dp)
+                    .fillMaxWidth()
+                    .background(Color.White)
+                    .padding(10.dp)
+                    .wrapContentHeight()
+
             ) {
-                Text(
-                    text = "Name (Other countries)",
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
+                Column(
                     modifier = Modifier
-                        .padding(5.dp)
+                        .background(Color(0XFF30A7D7))
                         .fillMaxWidth()
-                )
-                Text(
-                    text = "English: ${pokemon.name.english}",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Japanese: ${pokemon.name.japanese}",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Chinese: ${pokemon.name.chinese}",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "French: ${pokemon.name.french}",
-                    fontWeight = FontWeight.Bold
-                )
-
-            }
-
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(16.dp)
-            ) {
-                Text(
-                    text = "Type",
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(5.dp)
-                        .fillMaxWidth()
-                )
-                Text(
-                    text = "Type: ${pokemon.type.joinToString()}",
-                    style = MaterialTheme.typography.bodyLarge
-                )
-
-            }
-
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            // Display Pokemon Base Stats
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(16.dp)
-            ) {
-                Column {
+                        .padding(5.dp),
+                    verticalArrangement = Arrangement.SpaceEvenly
+                ) {
                     Text(
-                        text = "Base Stats",
+                        text = "Profile",
+                        style = MaterialTheme.typography.titleLarge,
                         textAlign = TextAlign.Center,
-                        fontWeight = FontWeight.Bold,
+                        color = Color.Black, modifier = Modifier.fillMaxWidth()
+                    )
+                    Row(
                         modifier = Modifier
-                            .padding(5.dp)
                             .fillMaxWidth()
-                    )
-                    Text(text = "HP: ${pokemon.base.HP}")
-                    Text(text = "Attack: ${pokemon.base.Attack}")
-                    Text(text = "Defense: ${pokemon.base.Defense}")
-                    Text(text = "Sp. Attack: ${pokemon.base.SpAttack}")
-                    Text(text = "Sp. Defense: ${pokemon.base.SpDefense}")
-                    Text(text = "Speed: ${pokemon.base.Speed}")
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Height",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Species",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = pokemon.profile.height,
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = pokemon.species,
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Weight",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Ability",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = pokemon.profile.weight,
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = pokemon.profile.ability[0].filter { s -> s != "true" && s != "false" }
+                                .joinToString(),
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Gender",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, top = 10.dp),
+                            text = "Hidden ability",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.White
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = pokemon.profile.gender,
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                        Text(
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .padding(start = 10.dp, end= 10.dp, bottom = 10.dp, top = 5.dp),
+                            text = if (pokemon.profile.ability.size > 1) {
+                                pokemon.profile.ability[1].filter { s -> s != "true" && s != "false" }
+                                    .joinToString()
+                            } else {
+                                "N/A"
+                            },
+                            style = MaterialTheme.typography.titleLarge,
+                            color = Color.Black
+                        )
+                    }
                 }
-
             }
 
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(16.dp)
-            ) {
-                Text(
-                    text = "Species",
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(5.dp)
-                        .fillMaxWidth()
-                )
-                Text(
-                    text = pokemon.species,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(16.dp)
-            ) {
-                Text(
-                    text = "Description",
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(5.dp)
-                        .fillMaxWidth()
-                )
-                Text(
-                    text = pokemon.description,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-            Card(
-                modifier = Modifier
-                    .padding(16.dp)
-            ) {
-                Text(
-                    text = "Profile",
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(5.dp)
-                        .fillMaxWidth()
-                )
-                Text(
-                    text = "Height: ${pokemon.profile.height}",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    text = "Weight: ${pokemon.profile.weight}",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    text = "Egg: ${pokemon.profile.egg.joinToString()}",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    text = "Normal ability: ${
-                        pokemon.profile.ability.get(0).filter { s -> s != "true" && s != "false" }
-                            .joinToString()
-                    }",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                if (pokemon.profile.ability.size > 1) {
-
-
-                    Text(
-                        text = "Hidden ability: ${
-                            pokemon.profile.ability.get(1)
-                                .filter { s -> s != "true" && s != "false" }.joinToString()
-                        }",
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                }
-                Text(
-                    text = "Gender (male : female): ${pokemon.profile.gender}",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
         }
     }
 }
