@@ -1,6 +1,7 @@
 package com.example.di_tarea_mvvm_carlosmilena.vistas
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,15 +11,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -38,11 +41,13 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.util.PatternsCompat
 import androidx.navigation.NavController
 import com.example.di_tarea_mvvm_carlosmilena.R
 import com.example.di_tarea_mvvm_carlosmilena.controladores.AppScreens
+import com.example.di_tarea_mvvm_carlosmilena.ui.theme.flexoMedium
 import com.example.di_tarea_mvvm_carlosmilena.viewmodel.LoginViewModel
 import kotlinx.coroutines.launch
 
@@ -51,7 +56,6 @@ fun AutenticacionScreen(navController: NavController, loginViewModel: LoginViewM
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
     ) {
         ContenidoAutenticacion(
             Modifier.align(Alignment.Center),
@@ -84,73 +88,109 @@ fun ContenidoAutenticacion(
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
     } else {
-        Box(modifier = Modifier.fillMaxSize()) {
-            Image(
-                painter = painterResource(id = R.drawable.background_inicio),
-                contentDescription = "background",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.matchParentSize()
-            )
 
-            Column(modifier = modifier) {
+
+        Column(modifier = modifier) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(0.3f)
+                    .background(Color(0XFF8FDADD)), horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Image(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(0.3f),
+                    painter = painterResource(id = R.drawable.poke_girl),
+                    contentDescription = null, alignment = Alignment.TopStart
+                )
                 Text(
                     text = "Identificarse",
                     style = MaterialTheme.typography.headlineLarge,
-                    modifier = Modifier.padding(bottom = 16.dp)
+                    textAlign = TextAlign.Center,
+                    fontFamily = flexoMedium,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .weight(0.7f)
+                        .wrapContentHeight(align = Alignment.CenterVertically),
                 )
-
-
-                EmailField(email) { viewModel.onLoginChanged(it, password) }
-                Spacer(modifier = Modifier.padding(15.dp))
-                PasswordField(password, keyboardController) { viewModel.onLoginChanged(email, it) }
-                Spacer(modifier = Modifier.padding(15.dp))
-                LoginButton(loginEnable, email, password) {
-                    coroutineScope.launch {
-                        viewModel.onLoginSelected()
-                    }
-                }
             }
 
 
-
-
-            Column(
+            Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .fillMaxWidth()
+                    .weight(0.4f)
+            ) {
+                Image(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    painter = painterResource(id = R.drawable.gradient_autenticacion),
+                    contentDescription = null, contentScale = ContentScale.FillBounds
+                )
+                Column(
+                    verticalArrangement = Arrangement.SpaceEvenly, modifier = Modifier
+                            .fillMaxSize()
+                ) {
+                    EmailField(email) { viewModel.onLoginChanged(it, password) }
+                    PasswordField(password, keyboardController) {
+                        viewModel.onLoginChanged(
+                            email,
+                            it
+                        )
+                    }
+                    Row(
+                        horizontalArrangement = Arrangement.SpaceEvenly,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+
+
+                        ElevatedButton(
+                            onClick = { navController.navigate(AppScreens.InicioScreen.route) },
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0XFF1E4C87)),
+                            elevation = ButtonDefaults.buttonElevation(
+                                defaultElevation = 10.dp
+                            )
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.ArrowBack,
+                                    contentDescription = null,
+                                    tint = Color.White
+                                )
+
+                                Text(text = "Volver", color = Color.White, fontFamily = flexoMedium)
+                            }
+                        }
+                        LoginButton(loginEnable, email, password, navController) {
+                            coroutineScope.launch {
+                                viewModel.onLoginSelected()
+                            }
+                        }
+
+                    }
+                }
+            }
+            Box(
+                modifier = Modifier
+                    .background(Color(0XFFCA6164))
+                    .weight(0.3f)
             ) {
 
-
-                Row(
+                Image(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ) {
-
-
-                    Button(onClick = { navController.navigate(AppScreens.InicioScreen.route) }) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.ArrowBack,
-                                contentDescription = null,
-                                tint = Color.White
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Text(text = "Volver", color = Color.White)
-                        }
-                    }
-                }
+                        .fillMaxWidth(),
+                    painter = painterResource(id = R.drawable.red_boy),
+                    contentDescription = null, alignment = Alignment.BottomEnd
+                )
             }
+
 
         }
     }
-
 
 }
 
@@ -160,26 +200,35 @@ fun LoginButton(
     loginEnable: Boolean,
     email: String,
     password: String,
+    navController: NavController,
     onLoginSelected: () -> Unit
 ) {
-    Button(
-        onClick = {
-            onLoginSelected()
-        },
-        enabled = PatternsCompat.EMAIL_ADDRESS.matcher(email)
+    ElevatedButton(
+        onClick = { onLoginSelected() },
+        colors = ButtonDefaults.buttonColors(containerColor = Color(0XFF1E4C87)),
+        elevation = ButtonDefaults.buttonElevation(
+            defaultElevation = 10.dp
+        ), enabled = PatternsCompat.EMAIL_ADDRESS.matcher(email)
             .matches() && password.isNotEmpty() && loginEnable
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Icon(
-                imageVector = Icons.Default.CheckCircle,
-                contentDescription = null,
-                tint = Color.White
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Acceder", color = Color.White)
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Check,
+                    contentDescription = null,
+                    tint = Color.White
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(text = "Acceder", color = Color.White, fontFamily = flexoMedium)
+            }
+
         }
     }
 
@@ -220,7 +269,7 @@ fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 16.dp)
+            .padding(horizontal = 16.dp)
     )
 
 
@@ -267,7 +316,7 @@ fun PasswordField(
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 16.dp)
+            .padding(horizontal = 16.dp)
     )
 
 

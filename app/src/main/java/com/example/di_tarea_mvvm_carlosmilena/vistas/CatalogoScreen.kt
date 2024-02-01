@@ -33,7 +33,8 @@ import com.example.di_tarea_mvvm_carlosmilena.viewmodel.PokemonViewModel
 fun CatalogoScreen(navController: NavController, pokemonViewModel: PokemonViewModel) {
 
     Scaffold(topBar = {
-        TopAppBar(actions = {
+        TopAppBar(
+            actions = {
             IconButton(onClick = { navController.navigate(AppScreens.InicioScreen.route) }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
@@ -42,9 +43,9 @@ fun CatalogoScreen(navController: NavController, pokemonViewModel: PokemonViewMo
                 )
             }
         },
-            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF495D92)),
+            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF1E4C87)),
             title = {
-                Text(text = "Catálogo de juegos", color = Color.White)
+                Text(text = "Pokédex", color = Color.White)
             })
     }) { contentPadding ->
         Box(

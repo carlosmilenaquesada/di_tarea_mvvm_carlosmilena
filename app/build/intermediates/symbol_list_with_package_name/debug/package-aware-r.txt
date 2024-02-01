@@ -79,6 +79,8 @@ drawable abc_vector_test
 drawable background_inicio
 drawable container_bg
 drawable fondonav
+drawable gradient_autenticacion
+drawable gradient_image
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -118,7 +120,11 @@ drawable playstation_minecraftlegends
 drawable playstation_nba2k23
 drawable playstation_pga2k23
 drawable playstation_stray
+drawable poke_girl
+drawable pokedex_background
+drawable pokedex_icon
 drawable pokemon_logo
+drawable red_boy
 drawable registro__background
 drawable wellplayedlogo
 drawable xbox_ageofempire2

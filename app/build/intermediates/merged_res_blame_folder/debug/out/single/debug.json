@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\xbox_residentevil4.png"
     },
     {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_gradient_image.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\gradient_image.png"
+    },
+    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_playstation_horizonmontain.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\playstation_horizonmontain.png"
     },
@@ -40,12 +44,20 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\fondonav.png"
     },
     {
+        "merged": "com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:/drawable_gradient_autenticacion.png.flat",
+        "source": "com.example.di_tarea_mvvm_carlosmilena.app-main-57:/drawable/gradient_autenticacion.png"
+    },
+    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_playstation_2pointcampus.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\playstation_2pointcampus.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_pokedex_background.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\pokedex_background.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\font_flexo_medium_italic.otf.flat",
@@ -104,6 +116,10 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\nintendo_monsterhunterrise.png"
     },
     {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_poke_girl.jpg.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\poke_girl.jpg"
+    },
+    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_xbox_jurassicworldevo2.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\xbox_jurassicworldevo2.png"
     },
@@ -114,6 +130,10 @@
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_pokedex_icon.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\pokedex_icon.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_nintendo_bayonetta3.png.flat",
@@ -148,10 +168,6 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\playstation_gowragnarok.png"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_pokemon_name.png.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\pokemon_name.png"
-    },
-    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_registro__background.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\registro__background.png"
     },
@@ -180,10 +196,6 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\nintendo_mariostrike.png"
     },
     {
-        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_gotta_cautch.png.flat",
-        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\gotta_cautch.png"
-    },
-    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
@@ -196,6 +208,10 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\xbox_farcry6.png"
     },
     {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_red_boy.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\red_boy.png"
+    },
+    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_playstation_stray.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\playstation_stray.png"
     },
@@ -204,15 +220,15 @@
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:/drawable_pokemon_logo.png.flat",
-        "source": "com.example.di_tarea_mvvm_carlosmilena.app-main-57:/drawable/pokemon_logo.png"
-    },
-    {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_playstation_nba2k23.png.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\playstation_nba2k23.png"
     },
     {
         "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-merged_res-55:\\drawable_pokemon_logo.png.flat",
+        "source": "C:\\Users\\Administrador\\.gradle\\daemon\\8.0\\com.example.di_tarea_mvvm_carlosmilena.app-main-57:\\drawable\\pokemon_logo.png"
     }
 ]

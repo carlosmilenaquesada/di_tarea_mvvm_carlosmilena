@@ -44,9 +44,9 @@ fun DetallesScreen(navController: NavController, pokemon: Pokemon) {
                         tint = Color.White
                     )
                 }
-            }, colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF495D92)),
+            }, colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF1E4C87)),
             title = {
-                Text(text = "Detalles de juegos", color = Color.White)
+                Text(text = "Detalles", color = Color.White)
             }
         )
     }) { contentPadding ->
