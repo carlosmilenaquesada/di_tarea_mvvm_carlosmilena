@@ -2,6 +2,8 @@ package com.example.di_tarea_mvvm_carlosmilena.vistas
 
 
 import android.annotation.SuppressLint
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -25,34 +27,36 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.di_tarea_mvvm_carlosmilena.R
+import com.example.di_tarea_mvvm_carlosmilena.model.BaseStats
+import com.example.di_tarea_mvvm_carlosmilena.model.Name
 import com.example.di_tarea_mvvm_carlosmilena.model.Pokemon
 import java.util.*
+import kotlin.reflect.full.memberProperties
 
 
+@RequiresApi(Build.VERSION_CODES.S)
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun DetallesScreen(navController: NavController, pokemon: Pokemon) {
 
     Scaffold(topBar = {
-        TopAppBar(
-            actions = {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = "Volver",
-                        tint = Color.White
-                    )
-                }
-            }, colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF1E4C87)),
+        TopAppBar(actions = {
+            IconButton(onClick = { navController.popBackStack() }) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = "Volver",
+                    tint = Color.White
+                )
+            }
+        },
+            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF1E4C87)),
             title = {
                 Text(text = "Detalles", color = Color.White)
-            }
-        )
+            })
     }) { contentPadding ->
         Box(
-            modifier = Modifier
-                .padding(contentPadding)
+            modifier = Modifier.padding(contentPadding)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.background_inicio),
@@ -66,6 +70,7 @@ fun DetallesScreen(navController: NavController, pokemon: Pokemon) {
 
 }
 
+@RequiresApi(Build.VERSION_CODES.S)
 @Composable
 fun ContenidoDetalles(navController: NavController, pokemon: Pokemon) {
 
@@ -81,6 +86,7 @@ fun ContenidoDetalles(navController: NavController, pokemon: Pokemon) {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.S)
 @Composable
 fun PokemonCard(pokemon: Pokemon) {
 
@@ -88,9 +94,7 @@ fun PokemonCard(pokemon: Pokemon) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
-        ),
-        shape = RoundedCornerShape(4.dp),
-        modifier = Modifier
+        ), shape = RoundedCornerShape(4.dp), modifier = Modifier
             .padding(10.dp)
             .wrapContentHeight()
 
@@ -114,9 +118,10 @@ fun PokemonCard(pokemon: Pokemon) {
                     .padding(16.dp)
                     .verticalScroll(rememberScrollState())
             ) {
+
+                /*NUMERO Y NOMBRE*/
                 Row(
-                    horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier.fillMaxWidth()
+                    horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
                         text = pokemon.name.english,
@@ -131,177 +136,45 @@ fun PokemonCard(pokemon: Pokemon) {
                         modifier = Modifier.padding(horizontal = 5.dp)
                     )
                 }
-
+                /**
+                 * IMAGEN*/
                 AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(pokemon.image.hires)
+                    model = ImageRequest.Builder(LocalContext.current).data(pokemon.image.hires)
                         .build(),
                     modifier = Modifier
                         .width(200.dp)
                         .height(200.dp)
                         .padding(5.dp),
-                    contentDescription = pokemon.name.english, contentScale = ContentScale.Fit
+                    contentDescription = pokemon.name.english,
+                    contentScale = ContentScale.Fit
                 )
 
-
-
-                /*NAMES*/
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .wrapContentHeight()
-
+                /**
+                 * IDIOMAS*/
+                MiElevatedCard(
+                    "Name (Other countries)", Color(0XFF7FB9C9)
                 ) {
-                    Column(
-                        modifier = Modifier
-                            .background(Color(0XFF7FB9C9))
-                            .padding(15.dp)
-                            .fillMaxWidth(),
-                        verticalArrangement = Arrangement.SpaceEvenly
-                    ) {
-
-
-                        Text(
-                            text = "Name (Other countries)",
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(bottom = 15.dp)
-                        )
-                        Text(
-                            text = "English: ${pokemon.name.english}",
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(5.dp)
-                        )
-                        Text(
-                            text = "Japanese: ${pokemon.name.japanese}",
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(5.dp)
-                        )
-                        Text(
-                            text = "Chinese: ${pokemon.name.chinese}",
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(5.dp)
-                        )
-                        Text(
-                            text = "French: ${pokemon.name.french}",
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(5.dp)
-                        )
-                    }
+                    GenerarIdiomas(pokemon = pokemon)
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
-                /*DESCRIPTION*/
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .wrapContentHeight()
-
-                ) {
-                    Column(
-                        modifier = Modifier
-                            .background(Color(0XFF9ACCD7))
-                            .padding(15.dp)
-                            .fillMaxWidth(),
-                        verticalArrangement = Arrangement.SpaceEvenly
-                    ) {
-                        Text(
-                            text = "Description",
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(bottom = 15.dp)
-                        )
-                        Text(
-                            text = pokemon.description,
-                            textAlign = TextAlign.Justify
-                        )
-                    }
-
+                /**
+                 * DESCRIPCIÓN*/
+                MiElevatedCard("Description", Color(0XFF9ACCD7)) {
+                    Text(
+                        text = pokemon.description, textAlign = TextAlign.Justify
+                    )
                 }
-                Spacer(modifier = Modifier.height(16.dp))
-                /*BASE STATS*/
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentHeight()
 
+                /**
+                 * BASE STATS*/
+                MiElevatedCard(
+                    titulo = "Base Stats", color = Color(0XFF4C7391)
                 ) {
-                    Column(
-                        modifier = Modifier
-                            .background(Color(0XFF5C8CA3))
-                            .fillMaxWidth()
-                            .padding(15.dp),
-                        verticalArrangement = Arrangement.SpaceEvenly
-                    ) {
-                        Text(
-                            text = "Base stats",
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            color = Color.Black, modifier = Modifier.fillMaxWidth()
-                        )
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(top = 10.dp)
-                        ) {
-
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.15f),
-                                text = "HP",
-                                color = Color.White
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.15f),
-
-                                text = pokemon.base.HP.toString(),
-                                color = Color.Black
-                            )
-                            LinearProgressIndicator(
-                                progress = pokemon.base.HP.toFloat() / 255f,
-                                color = when {
-                                    pokemon.base.HP in 1..29 -> Color(0XFFF34444)//Red: Very Bad (1 - 29)
-                                    pokemon.base.HP in 30..59 -> Color(0XFFFF7F0F)//Orange: Bad (30 - 59)
-                                    pokemon.base.HP in 60..89 -> Color(0XFFFFDD57)//Yellow: Bad - Mediocre (60 - 89)
-                                    pokemon.base.HP in 90..119 -> Color(0XFFA0E515)//Green: Decent - Good (90 - 119)
-                                    pokemon.base.HP in 120..149 -> Color(0XFF23CD5E)//Dark Green: Very Good (120 - 149)
-                                    pokemon.base.HP in 150..255 -> Color(0XFF00C2B8)//Blue: Phenomenal (150 - 255)
-                                    else -> Color.Blue
-                                },
-                                modifier = Modifier
-                                    .weight(0.7f)
-                                    .height(16.dp)
-                            )
-                        }
-
-
-                    }
+                    GenerarStats(pokemon = pokemon)
                 }
-                Spacer(modifier = Modifier.height(16.dp))
+
+
+
                 /*PROFILES*/
                 ElevatedCard(
                     elevation = CardDefaults.cardElevation(
@@ -324,11 +197,11 @@ fun PokemonCard(pokemon: Pokemon) {
                             text = "Profile",
                             fontSize = 20.sp,
                             textAlign = TextAlign.Center,
-                            color = Color.Black, modifier = Modifier.fillMaxWidth()
+                            color = Color.Black,
+                            modifier = Modifier.fillMaxWidth()
                         )
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
@@ -347,38 +220,26 @@ fun PokemonCard(pokemon: Pokemon) {
                         }
 
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
                                     .weight(0.4f)
                                     .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
-                                text = pokemon.profile.height,
-                                color = Color.Black
+                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                    ), text = pokemon.profile.height, color = Color.Black
                             )
                             Text(
                                 modifier = Modifier
                                     .weight(0.4f)
                                     .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
-                                text = pokemon.species,
-                                color = Color.Black
+                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                    ), text = pokemon.species, color = Color.Black
                             )
                         }
 
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
@@ -396,38 +257,26 @@ fun PokemonCard(pokemon: Pokemon) {
                             )
                         }
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
                                     .weight(0.4f)
                                     .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
-                                text = pokemon.profile.weight,
-                                color = Color.Black
+                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                    ), text = pokemon.profile.weight, color = Color.Black
                             )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
+                            Text(modifier = Modifier
+                                .weight(0.4f)
+                                .padding(
+                                    start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                ),
                                 text = pokemon.profile.ability[0].filter { s -> s != "true" && s != "false" }
                                     .joinToString(),
-                                color = Color.Black
-                            )
+                                color = Color.Black)
                         }
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
@@ -445,39 +294,27 @@ fun PokemonCard(pokemon: Pokemon) {
                             )
                         }
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier
                                     .weight(0.4f)
                                     .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
-                                text = pokemon.profile.gender,
-                                color = Color.Black
+                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                    ), text = pokemon.profile.gender, color = Color.Black
                             )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp,
-                                        end = 10.dp,
-                                        bottom = 10.dp,
-                                        top = 5.dp
-                                    ),
-                                text = if (pokemon.profile.ability.size > 1) {
-                                    pokemon.profile.ability[1].filter { s -> s != "true" && s != "false" }
-                                        .joinToString()
-                                } else {
-                                    "N/A"
-                                },
+                            Text(modifier = Modifier
+                                .weight(0.4f)
+                                .padding(
+                                    start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
+                                ), text = if (pokemon.profile.ability.size > 1) {
+                                pokemon.profile.ability[1].filter { s -> s != "true" && s != "false" }
+                                    .joinToString()
+                            } else {
+                                "N/A"
+                            },
 
-                                color = Color.Black
-                            )
+                                color = Color.Black)
                         }
                     }
                 }
@@ -487,4 +324,84 @@ fun PokemonCard(pokemon: Pokemon) {
 
         }
     }
+}
+
+
+@Composable
+fun GenerarIdiomas(pokemon: Pokemon) {
+    Name::class.memberProperties.forEach { member ->
+        val name = member.name
+        val value = member.get(pokemon.name) as String
+        Text(
+            text = "${name.capitalize()} $value",
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+        )
+    }
+}
+
+@Composable
+fun GenerarStats(pokemon: Pokemon) {
+    BaseStats::class.memberProperties.forEach { member ->
+        val name = member.name
+        val value = member.get(pokemon.base) as Integer
+        Row {
+            Text(
+                text = name, color = Color.White, modifier = Modifier.weight(0.3f)
+            )
+            Text(
+                text = value.toString(), color = Color.Black, modifier = Modifier.weight(0.1f)
+            )
+            LinearProgressIndicator(
+                progress = value.toFloat() / 255f,
+                color = when (value.toInt()) {
+                    in 1..29 -> Color(0XFFF34444)
+                    in 30..59 -> Color(0XFFFF7F0F)
+                    in 60..89 -> Color(0XFFFFDD57)
+                    in 90..119 -> Color(0XFFA0E515)
+                    in 120..149 -> Color(0XFF23CD5E)
+                    in 150..255 -> Color(0XFF00C2B8)
+                    else -> Color.Blue
+                }, modifier = Modifier
+                    .height(16.dp)
+                    .weight(0.6f)
+            )
+
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+    }
+}
+
+
+@Composable
+fun MiElevatedCard(
+    titulo: String,
+    color: Color,
+    miFuncion: @Composable () -> Unit,
+) {
+    ElevatedCard(
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 6.dp
+        ), shape = RoundedCornerShape(4.dp), modifier = Modifier.wrapContentHeight()
+    ) {
+        Column(
+            modifier = Modifier
+                .background(color = color)
+                .padding(15.dp)
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = titulo,
+                fontSize = 20.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 5.dp)
+            )
+            miFuncion()
+        }
+    }
+    Spacer(modifier = Modifier.height(16.dp))
 }

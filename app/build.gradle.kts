@@ -59,6 +59,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
 
+    // Gradle Groovy DLS
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlin}")
+
+// Gradle Kotlin DLS
+    implementation(kotlin("reflect"))
+
     implementation("androidx.navigation:navigation-compose:2.7.6")
     implementation("androidx.compose.ui:ui:1.6.0")
     implementation("androidx.compose.material:material:1.6.0")
@@ -74,7 +80,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //coil
-    implementation ("io.coil-kt:coil-compose:2.5.0")
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.activity:activity-compose:1.8.1")
@@ -83,4 +89,5 @@ dependencies {
 
     // Gson
     implementation("com.google.code.gson:gson:2.8.6")
+    implementation(kotlin("reflect"))
 }
