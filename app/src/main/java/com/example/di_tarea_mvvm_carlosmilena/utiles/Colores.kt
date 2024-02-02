@@ -26,3 +26,10 @@ fun getColores(): HashMap<String, Array<Color>> {
     )
 }
 
+
+val Color_1_29 = Color(0XFFF34444)
+val Color_30_59 = Color(0XFFFF7F0F)
+val Color_60_89 = Color(0XFFFFDD57)
+val Color_90_119 = Color(0XFFA0E515)
+val Color_120_149 = Color(0XFF23CD5E)
+val Color_150_255 = Color(0XFF00C2B8)

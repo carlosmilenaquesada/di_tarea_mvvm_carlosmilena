@@ -30,6 +30,13 @@ import com.example.di_tarea_mvvm_carlosmilena.R
 import com.example.di_tarea_mvvm_carlosmilena.model.BaseStats
 import com.example.di_tarea_mvvm_carlosmilena.model.Name
 import com.example.di_tarea_mvvm_carlosmilena.model.Pokemon
+import com.example.di_tarea_mvvm_carlosmilena.model.Profile
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_120_149
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_150_255
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_1_29
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_30_59
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_60_89
+import com.example.di_tarea_mvvm_carlosmilena.utiles.Color_90_119
 import java.util.*
 import kotlin.reflect.full.memberProperties
 
@@ -58,33 +65,13 @@ fun DetallesScreen(navController: NavController, pokemon: Pokemon) {
         Box(
             modifier = Modifier.padding(contentPadding)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.background_inicio),
-                contentDescription = "background",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.matchParentSize()
-            )
-            ContenidoDetalles(navController, pokemon)
+
+            PokemonCard(pokemon = pokemon)
         }
     }
 
 }
 
-@RequiresApi(Build.VERSION_CODES.S)
-@Composable
-fun ContenidoDetalles(navController: NavController, pokemon: Pokemon) {
-
-    Box(modifier = Modifier.fillMaxSize()) {
-        Image(
-            painter = painterResource(id = R.drawable.background_inicio),
-            contentDescription = "background",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.matchParentSize()
-        )
-
-        PokemonCard(pokemon = pokemon)
-    }
-}
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
@@ -174,155 +161,49 @@ fun PokemonCard(pokemon: Pokemon) {
                 }
 
 
-
-                /*PROFILES*/
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentHeight()
-
+                /**
+                 * PROFILES*/
+                MiElevatedCard(
+                    titulo = "Profiles", color = Color(0XFF5C8CA3)
                 ) {
-                    Column(
-                        modifier = Modifier
-                            .background(Color(0XFF5C8391))
-                            .fillMaxWidth()
-                            .padding(top = 15.dp, end = 15.dp, start = 15.dp, bottom = 5.dp),
-                        verticalArrangement = Arrangement.SpaceEvenly
-                    ) {
-                        Text(
-                            text = "Profile",
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            color = Color.Black,
-                            modifier = Modifier.fillMaxWidth()
-                        )
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Height",
-                                color = Color.White
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Species",
-                                color = Color.White
-                            )
-                        }
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                    ), text = pokemon.profile.height, color = Color.Black
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                    ), text = pokemon.species, color = Color.Black
-                            )
-                        }
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Weight",
-                                color = Color.White
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Ability",
-                                color = Color.White
-                            )
-                        }
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                    ), text = pokemon.profile.weight, color = Color.Black
-                            )
-                            Text(modifier = Modifier
-                                .weight(0.4f)
-                                .padding(
-                                    start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                ),
-                                text = pokemon.profile.ability[0].filter { s -> s != "true" && s != "false" }
-                                    .joinToString(),
-                                color = Color.Black)
-                        }
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Gender",
-                                color = Color.White
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(start = 10.dp, end = 10.dp, top = 10.dp),
-                                text = "Hidden ability",
-                                color = Color.White
-                            )
-                        }
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .weight(0.4f)
-                                    .padding(
-                                        start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                    ), text = pokemon.profile.gender, color = Color.Black
-                            )
-                            Text(modifier = Modifier
-                                .weight(0.4f)
-                                .padding(
-                                    start = 10.dp, end = 10.dp, bottom = 10.dp, top = 5.dp
-                                ), text = if (pokemon.profile.ability.size > 1) {
-                                pokemon.profile.ability[1].filter { s -> s != "true" && s != "false" }
-                                    .joinToString()
-                            } else {
-                                "N/A"
-                            },
-
-                                color = Color.Black)
-                        }
-                    }
+                    GenerarProfiles(pokemon = pokemon)
                 }
+
 
             }
 
 
         }
+    }
+}
+
+
+@Composable
+fun GenerarProfiles(pokemon: Pokemon) {
+    Profile::class.memberProperties.forEach { member ->
+        val name = member.name
+        val value = member.get(pokemon.profile) as Any
+        Row {
+            Text(
+                text = name.capitalize(), color = Color.White, modifier = Modifier.weight(0.3f)
+            )
+            var valor: String = ""
+
+            if (value is List<*>) {
+                listOf(value).forEach { l ->
+                    valor = l.toString().replace("[", "").replace("]", "").replace(", true", "")
+                        .replace(", false", "")
+                }
+            } else {
+                valor = value.toString().replace("[", "").replace("]", "").replace(", true", "")
+                    .replace(", false", "")
+            }
+            Text(
+                text = valor, color = Color.Black, modifier = Modifier.weight(0.7f)
+
+            )
+        }
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }
 
@@ -357,12 +238,12 @@ fun GenerarStats(pokemon: Pokemon) {
             LinearProgressIndicator(
                 progress = value.toFloat() / 255f,
                 color = when (value.toInt()) {
-                    in 1..29 -> Color(0XFFF34444)
-                    in 30..59 -> Color(0XFFFF7F0F)
-                    in 60..89 -> Color(0XFFFFDD57)
-                    in 90..119 -> Color(0XFFA0E515)
-                    in 120..149 -> Color(0XFF23CD5E)
-                    in 150..255 -> Color(0XFF00C2B8)
+                    in 1..29 -> Color_1_29
+                    in 30..59 -> Color_30_59
+                    in 60..89 -> Color_60_89
+                    in 90..119 -> Color_90_119
+                    in 120..149 -> Color_120_149
+                    in 150..255 -> Color_150_255
                     else -> Color.Blue
                 }, modifier = Modifier
                     .height(16.dp)
