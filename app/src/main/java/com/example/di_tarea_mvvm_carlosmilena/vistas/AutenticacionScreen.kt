@@ -14,13 +14,13 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -76,6 +76,7 @@ fun ContenidoAutenticacion(
     val password: String by viewModel.password.observeAsState(initial = "")
     val loginEnable: Boolean by viewModel.loginEnable.observeAsState(initial = false)
     val isLoading: Boolean by viewModel.isLoading.observeAsState(initial = false)
+    val isLogueado: String by viewModel.isLogueado.observeAsState(initial = "Identifícate")
     val coroutineScope = rememberCoroutineScope()
 
 
@@ -88,8 +89,6 @@ fun ContenidoAutenticacion(
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
     } else {
-
-
         Column(modifier = modifier) {
             Row(
                 modifier = Modifier
@@ -105,7 +104,7 @@ fun ContenidoAutenticacion(
                     contentDescription = null, alignment = Alignment.TopStart
                 )
                 Text(
-                    text = "Identificarse",
+                    text = isLogueado,
                     style = MaterialTheme.typography.headlineLarge,
                     textAlign = TextAlign.Center,
                     fontFamily = flexoMedium,
@@ -165,7 +164,7 @@ fun ContenidoAutenticacion(
                                 Text(text = "Volver", color = Color.White, fontFamily = flexoMedium)
                             }
                         }
-                        LoginButton(loginEnable, email, password, navController) {
+                        LoginButton(loginEnable, email, password) {
                             coroutineScope.launch {
                                 viewModel.onLoginSelected()
                             }
@@ -200,7 +199,6 @@ fun LoginButton(
     loginEnable: Boolean,
     email: String,
     password: String,
-    navController: NavController,
     onLoginSelected: () -> Unit
 ) {
     ElevatedButton(
@@ -231,16 +229,6 @@ fun LoginButton(
 
         }
     }
-
-
-    /*Button(
-        onClick = { onLoginSelected() }, modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        enabled = loginEnable
-    ) {
-        Text(text = "Iniciar")
-    }*/
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

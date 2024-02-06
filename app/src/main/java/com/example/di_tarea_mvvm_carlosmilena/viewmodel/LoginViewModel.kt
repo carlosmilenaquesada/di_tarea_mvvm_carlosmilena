@@ -5,11 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.delay
-import java.util.regex.Pattern
 
 class LoginViewModel : ViewModel() {
     private val _email = MutableLiveData<String>()
     val email: LiveData<String> = _email
+
     private val _password = MutableLiveData<String>()
     val password: LiveData<String> = _password
 
@@ -18,6 +18,9 @@ class LoginViewModel : ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _isLogueado = MutableLiveData<String>()
+    val isLogueado: LiveData<String> = _isLogueado
 
     fun onLoginChanged(email: String, password: String) {
         _email.value = email
@@ -34,6 +37,7 @@ class LoginViewModel : ViewModel() {
     suspend fun onLoginSelected() {
         _isLoading.value = true
         delay(3000)
+        _isLogueado.value = "Logueado correctamente"
         _isLoading.value = false
     }
 }
